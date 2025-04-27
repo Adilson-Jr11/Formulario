@@ -1,0 +1,210 @@
+/* Reset básico para remover estilos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilo do body */
+body {
+    background: linear-gradient(#031740, #03318C);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+    min-height: 100vh; /* Faz o body ocupar toda a altura da tela */
+}
+
+/* Estilo do formulário */
+.form {
+    max-width: 800px; /* Define uma largura máxima para o formulário */
+    margin: 0 auto 20px auto; /* Centraliza o formulário horizontalmente e adiciona espaçamento abaixo */
+    padding: 20px;
+    background: linear-gradient(#03318C, #031740); /* Fundo com degradê */
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Garante que os elementos internos fiquem em coluna */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+label {
+   flex: 1;
+   color: #ffdded;
+   font-size: 16px;
+   text-align: center;
+}
+
+textarea {
+    width: 100%; /* Faz a caixa de texto ocupar toda a largura disponível */
+    height: 100px; /* Define a altura da caixa de texto */
+    padding: 10px;
+    border: none; /* Remove bordas */
+    background: transparent; /* Fundo invisível */
+    color: #ffdded; /* Cor do texto */
+    font-size: 14px;
+    outline: none; /* Remove o contorno ao focar */
+    resize: none; /* Remove a opção de redimensionar a caixa */
+}
+
+.form-group.mensagem {
+    margin-top: 20px; /* Espaçamento acima da label 'mensagem' */
+    text-align: center; /* Centraliza a label */
+}
+
+input,textarea {
+    flex: 2;
+    padding: 10px;
+    border: 0.5px, solid, #122c61;
+    border-radius: 10px;
+    background: transparent;
+    color: #ffdded;
+    font-size: 14px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255,221, 237, 0.5) green, blue, alpha)
+}
+
+h1 {
+    color:#ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-family: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
+    padding: 15px; /* Adiciona espaçamento interno */
+    background: transparent; /* Cor de fundo rosa */
+    color: #ffffff; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra o cursor de "mão" ao passar sobre o botão */
+    margin-top: 20px; /* Espaçamento acima do botão */
+    text-transform: uppercase; /* Deixa o texto em letras maiúsculas */
+}
+
+button[type="submit"]:hover {
+    background-color: #ff1493; /* Cor mais escura ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Placeholder rosa fosco para os campos específicos */
+#cep::placeholder, #mensagem::placeholder, #cpf::placeholder {
+    color: #c0838a7a; /* Rosa fosco */
+    opacity: 1; /* Garante que a cor seja visível */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    bottom: 0; /* Começa no rodapé */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 23, 64, 0.8); /* Fundo azul escuro semitransparente */
+    justify-content: center;
+    align-items: flex-end; /* Alinha o modal no fundo inicialmente */
+    z-index: 1000;
+    animation: slide-up 0.8s ease-out forwards; /* Animação para subir do rodapé */
+}
+
+/* Caixa do modal */
+.modal-content {
+    background: #f5f5f5; /* Fundo branco acinzentado */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #03318C; /* Borda azul */
+    font-family: 'Arial', sans-serif; /* Fonte corporativa */
+}
+
+/* Título do modal */
+.modal-content h2 {
+    color: #03318C; /* Azul escuro */
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Texto do modal */
+.modal-content p {
+    color: #333333; /* Texto cinza escuro */
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5; /* Melhor espaçamento entre linhas */
+}
+
+/* Botão do modal */
+.modal-content button {
+    background-color: #ff69b4; /* Rosa */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-content button:hover {
+    background-color: #ff1493; /* Rosa mais escuro ao passar o mouse */
+}
+
+/* Animação para o modal subir do rodapé */
+@keyframes slide-up {
+    from {
+        transform: translateY(100%); /* Começa fora da tela, no rodapé */
+    }
+    to {
+        transform: translateY(0); /* Fica posicionado no fundo da página */
+    }
+}
+
+/* Estilo da div no final da página */
+.footer {
+    background-color: #03318C; /* Fundo azul escuro */
+    color: #ffffff; /* Texto branco */
+    text-align: center;
+    padding: 20px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100%; /* Ocupa toda a largura da página */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave acima da div */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 80px; /* Tamanho da logotipo */
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
